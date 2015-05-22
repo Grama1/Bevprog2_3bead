@@ -7,13 +7,13 @@
 struct button : public widget
 {
 
-std ::    string alap;
-
+std ::    string gombfelirat;
+bool megnyomtak;
     button(int a,int b, int c, int d);
     virtual ~button ();
     void rajz();
     void focusf();
-    void work1 ();
+    void work ();
 };
 
 #endif // BUTTON_H

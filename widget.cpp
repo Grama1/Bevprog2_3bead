@@ -11,7 +11,7 @@ widget::widget(int a, int b, int c, int d)
     posx=0;
     posy=0;
     focus=false;
-    mehete=false;
+
     //ctor
 }
 

@@ -5,9 +5,9 @@
 
 struct widget
 {
-    std ::    string gombfelirat;
+
     double x,y,px,py,posx,posy;
-    bool focus, mehete;
+    bool focus;
     widget(int a, int b, int c, int d);
     virtual ~widget();
     virtual void work ();

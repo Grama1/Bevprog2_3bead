@@ -7,6 +7,7 @@ using namespace genv;
 button::button(int a, int b, int c, int d) : widget (a,b,c,d)
 
 {
+megnyomtak=false;
 
     //ctor
 }
@@ -19,7 +20,8 @@ button::~button()
 void button::rajz (){
 
 gout << move_to(x,y) << color (200,200,200) << box (px,py);
-    gout << move_to(x+7,y+15) << color(0,0,0) << text(gombfelirat);
+    gout << move_to(x+7,y+15) << color(255,0,0) << text(gombfelirat);
+
 
 
 
@@ -33,19 +35,25 @@ if(focus==true){
     }
 
 }
-   void button::work1 (){
+   void button::work (){
 
-mehete=false;
-    if(posx>x && posx<x+px && posy>y && posy<y+py ){
-mehete=true;
-        posx=0;
+if(posx>x && posx<px+x && posy>y && posy<py+y){
+
+        megnyomtak=true;
+
+
+posx=0;
 posy=0;
+
+
+
+}
 
 
     }
 
 
-   }
+
 
 
 

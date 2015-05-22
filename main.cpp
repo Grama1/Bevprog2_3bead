@@ -6,6 +6,7 @@
 #include <sstream>
 #include <widget.h>
 #include <button.h>
+#include <JatekMester.h>
 using namespace genv;
 using namespace std;
 int X=860;
@@ -24,8 +25,9 @@ void torol()
 
 int main()
 {
-    vector <widget*> v;
+    vector <button*> v;
     button* p;
+    JatekMester* q;
 
 
 for (int j=0;j<40;){
@@ -55,6 +57,7 @@ v[i]->rajz();
 v[i]->work();
 v[i]->focusf();
 }
+q->work(v);
  gout << refresh;
         }
 if(ev.button==btn_left){
