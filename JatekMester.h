@@ -5,7 +5,9 @@
 #include <button.h>
 struct JatekMester
 {
-bool xjon;
+bool xjon, xnyert, onyert;
+int sorsz;
+
         JatekMester();
         virtual ~JatekMester();
 
