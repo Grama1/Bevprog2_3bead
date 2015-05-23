@@ -8,7 +8,7 @@ button::button(int a, int b, int c, int d) : widget (a,b,c,d)
 
 {
 megnyomtak=false;
-
+gombfelirat="P";
     //ctor
 }
 
@@ -20,13 +20,22 @@ button::~button()
 void button::rajz (){
 
 gout << move_to(x,y) << color (200,200,200) << box (px,py);
-    gout << move_to(x+7,y+15) << color(255,0,0) << text(gombfelirat);
+if (gombfelirat=="O"){
+    gout << move_to(x,y) << color (255,0,0) << box (px,py);
+gout << move_to(x+7,y+15) << color(255,255,255) << text(gombfelirat);
+}
+
+
+   if (gombfelirat=="X"){
+
+    gout << move_to(x,y) << color (0,0,255) << box (px,py);
+gout << move_to(x+7,y+15) << color(255,255,255) << text(gombfelirat);
 
 
 
 
 
-
+   }
 }
 
 void button::focusf(){

@@ -12,11 +12,6 @@ using namespace std;
 int X=860;
 int Y=860;
 
-void torol()
-{
-    gout << move_to (0,0) << color(0 ,0,0) << box (X-1,Y-1);
-
-}
 
 
 
@@ -49,7 +44,7 @@ j+=1;
 
     while(gin>>ev &&ev.keycode!=key_escape)
     {
-        torol();
+       q->torol();
         if (ev.type==ev_timer)
         {
 for (int i=0;i<v.size();i++){
@@ -66,5 +61,10 @@ if(ev.button==btn_left){
             v[i]->posy=ev.pos_y;
 }
 }
+if(ev.keycode==key_enter){
+        q->xnyert=false;
+        q->onyert=false;
+        for (int i=0;i<v.size();i++){v[i]->gombfelirat=" ";}
+     }
 }
 }

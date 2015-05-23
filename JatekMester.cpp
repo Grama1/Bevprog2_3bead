@@ -3,8 +3,7 @@ using namespace genv;
 JatekMester::JatekMester()
 {
     sorsz=1;
-    xnyert=false;
-    onyert=false;
+
     //ctor
 }
 
@@ -17,21 +16,13 @@ JatekMester::~JatekMester()
 
 void JatekMester::work (std ::vector <button*> &v)
  {
-for (int i=0;i<v.size();i++){
-    if(v[i]->megnyomtak==true && xjon==true && v[i]->gombfelirat!="X" && v[i]->gombfelirat!="O" ){
-        v[i]->gombfelirat="X";
-        v[i]->megnyomtak=false;
-        xjon=false;
-    }
-
-    if(v[i]->megnyomtak==true && xjon==false && v[i]->gombfelirat!="X" && v[i]->gombfelirat!="O"){
-        v[i]->gombfelirat="O";
-        v[i]->megnyomtak=false;
-        xjon=true;
-    }
+     xnyert=false;
+     onyert=false;
 
 
-}
+
+
+
 // viszintes keresés
 for (int i=0;i<v.size()-4;i++){
 
@@ -161,7 +152,55 @@ onyert=true;
 aktualissor-=1;
 
     }
+for (int i=0;i<v.size();i++){
+    if(v[i]->megnyomtak==true && xjon==true && v[i]->gombfelirat!="X" && v[i]->gombfelirat!="O" && onyert== false && xnyert==false ){
+        v[i]->gombfelirat="X";
+        v[i]->megnyomtak=false;
+        xjon=false;
+    }
+
+    if(v[i]->megnyomtak==true && xjon==false && v[i]->gombfelirat!="X" && v[i]->gombfelirat!="O"  && onyert== false && xnyert==false ){
+        v[i]->gombfelirat="O";
+        v[i]->megnyomtak=false;
+        xjon=true;
+    }
+
 
 }
 
+if (xnyert == true  ){
+
+            nyertes= "X nyert.";
+
+
+                gout << move_to (290,320) << color (0,0,255) << box_to(570,540);
+    gout << move_to (300,330) << color (0,0,0) << box_to(560,530);
+    gout << move_to(400,430) << color (0,0,255) << text(nyertes);
+ gout << move_to (330, 450) << color (255,255,255) << text ("Új játékhoz nyomj Entert.");
+
+
+
+
+     }
+     if (onyert == true  ){
+
+            nyertes= "O nyert.";
+
+
+                gout << move_to (290,320) << color (255,0,0) << box_to(570,540);
+    gout << move_to (300,330) << color (0,0,0) << box_to(560,530);
+    gout << move_to(400,430) << color (255,0,0) << text(nyertes);
+    gout << move_to (330, 450) << color (255,255,255) << text ("Új játékhoz nyomj Entert.");
+
+     }
+
+
+
+}
+
+void JatekMester::torol()
+{
+    gout << move_to (0,0) << color(0 ,0,0) << box (859,859);
+
+}
 
