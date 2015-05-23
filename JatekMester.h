@@ -3,10 +3,12 @@
 #include <vector>
 #include <widget.h>
 #include <button.h>
+#include <graphics.hpp>
+
 struct JatekMester
 {
 bool xjon, xnyert, onyert;
-int sorsz;
+int sorsz, aktualissor;
 
         JatekMester();
         virtual ~JatekMester();
