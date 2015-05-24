@@ -155,6 +155,8 @@ aktualissor-=1;
 
     }
 for (int i=0;i<v.size();i++){
+
+
         if(v[i]->megnyomtak==true && onyert== true || v[i]->megnyomtak==true && xnyert ==true){
                     v[i]->megnyomtak=false;
 
@@ -200,14 +202,15 @@ if (xnyert == true  ){
     gout << move_to (330, 450) << color (255,255,255) << text ("Új játékhoz nyomj Entert.");
 
      }
-
+dontetlentemp=true;
 for (int i=0;i<v.size();i++){
     if(v[i]->gombfelirat == " ")
 {
-    dontetlen =false;
+    dontetlentemp =false;
     i=v.size();
 }
 }
+dontetlen=dontetlentemp;
 if (dontetlen == true ){
 
  gout << move_to (290,320) << color (255,255,255) << box_to(570,540);

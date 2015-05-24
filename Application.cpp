@@ -64,6 +64,8 @@ if(ev.button==btn_left){
 if(ev.keycode==key_enter){
         q->xnyert=false;
         q->onyert=false;
+        q->dontetlen=false;
+        q->dontetlentemp=false;
         for (int i=0;i<v.size();i++){v[i]->gombfelirat=" ";}
      }
 }
