@@ -3,7 +3,6 @@ using namespace genv;
 JatekMester::JatekMester()
 {
     sorsz=1;
-
     //ctor
 }
 
@@ -18,6 +17,8 @@ void JatekMester::work (std ::vector <button*> &v)
  {
      xnyert=false;
      onyert=false;
+dontetlen=false;
+
 
 
 
@@ -153,6 +154,11 @@ aktualissor-=1;
 
     }
 for (int i=0;i<v.size();i++){
+        if(v[i]->megnyomtak==true && onyert== true || v[i]->megnyomtak==true && xnyert ==true){
+                    v[i]->megnyomtak=false;
+
+
+        }
     if(v[i]->megnyomtak==true && xjon==true && v[i]->gombfelirat!="X" && v[i]->gombfelirat!="O" && onyert== false && xnyert==false ){
         v[i]->gombfelirat="X";
         v[i]->megnyomtak=false;
@@ -170,12 +176,12 @@ for (int i=0;i<v.size();i++){
 
 if (xnyert == true  ){
 
-            nyertes= "X nyert.";
+
 
 
                 gout << move_to (290,320) << color (0,0,255) << box_to(570,540);
     gout << move_to (300,330) << color (0,0,0) << box_to(560,530);
-    gout << move_to(400,430) << color (0,0,255) << text(nyertes);
+    gout << move_to(400,430) << color (0,0,255) << text("X nyert.");
  gout << move_to (330, 450) << color (255,255,255) << text ("Új játékhoz nyomj Entert.");
 
 
@@ -184,17 +190,30 @@ if (xnyert == true  ){
      }
      if (onyert == true  ){
 
-            nyertes= "O nyert.";
+
 
 
                 gout << move_to (290,320) << color (255,0,0) << box_to(570,540);
     gout << move_to (300,330) << color (0,0,0) << box_to(560,530);
-    gout << move_to(400,430) << color (255,0,0) << text(nyertes);
+    gout << move_to(400,430) << color (255,0,0) << text("O nyert.");
     gout << move_to (330, 450) << color (255,255,255) << text ("Új játékhoz nyomj Entert.");
 
      }
 
+for (int i=0;i<v.size();i++){
+    if(v[i]->gombfelirat == " ")
+{
+    dontetlen =false;
+    i=v.size();
+}
+}
+if (dontetlen == true ){
 
+ gout << move_to (290,320) << color (255,255,255) << box_to(570,540);
+    gout << move_to (300,330) << color (0,0,0) << box_to(560,530);
+    gout << move_to(400,430) << color (255,255,255) << text("Döntetlen");
+    gout << move_to (330, 450) << color (255,255,255) << text ("Új játékhoz nyomj Entert.");
+}
 
 }
 
