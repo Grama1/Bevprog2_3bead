@@ -6,11 +6,12 @@
 #include <graphics.hpp>
 #include <string>
 #include <iostream>
+
 struct JatekMester
 {
-bool xjon, xnyert, onyert;
+bool xjon, xnyert, onyert, dontetlen, dontetlentemp;
 int sorsz, aktualissor;
-std ::string nyertes;
+
 
         JatekMester();
         virtual ~JatekMester();

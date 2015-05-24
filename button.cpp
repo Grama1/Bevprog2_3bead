@@ -8,7 +8,7 @@ button::button(int a, int b, int c, int d) : widget (a,b,c,d)
 
 {
 megnyomtak=false;
-gombfelirat="P";
+gombfelirat=" ";
     //ctor
 }
 

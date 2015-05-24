@@ -1,8 +1,9 @@
 #include "JatekMester.h"
 using namespace genv;
+
 JatekMester::JatekMester()
 {
-    sorsz=1;
+
     //ctor
 }
 
@@ -15,11 +16,11 @@ JatekMester::~JatekMester()
 
 void JatekMester::work (std ::vector <button*> &v)
  {
-     xnyert=false;
-     onyert=false;
+   xnyert=false;
+onyert=false;
 dontetlen=false;
 
-
+sorsz=1;
 
 
 
